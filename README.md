@@ -5,6 +5,7 @@ Official Vans website is bugged (e.g. after filtering the shoes by size, shows t
 First load may take a while, because the page goes idle when there is no traffic for a while.
 
 ## To run the app:
+> :warning: Locally app may not work as intended, because I use dotenv with mongodb url for security reasons.
 * `$ cd app`
 * `$ npm install`
 * `$ npm start`

@@ -1,0 +1,22 @@
+GET http://localhost:3001/api/getVansData
+###
+POST http://localhost:3001/api/getVansData
+Content-Type: application/json
+
+{
+    "vansId": "XDXD",
+    "name": "XDXDname",
+    "price": "XDXDprice",
+    "url": "XDXDurl",
+    "img": "XDXDimg",
+    "sizes": ["40", "42"]
+}
+
+###
+PUT http://localhost:3001/api/getVansData/60d092f08352e70d4c032c40
+Content-Type: application/json
+
+{
+    "sizes": ["41", "45"],
+    "lastUpdated": "XD"
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useInfiniteLoadingResource = ( items, additionalProps ) => {
+const useInfiniteLoading = ( items, additionalProps ) => {
   const [count, setCount] = useState({
     prev: 0,
     next: 10
@@ -54,4 +54,4 @@ const useInfiniteLoadingResource = ( items, additionalProps ) => {
   }
 }
 
-export default useInfiniteLoadingResource
+export default useInfiniteLoading

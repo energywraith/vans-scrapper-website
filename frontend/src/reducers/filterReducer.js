@@ -1,4 +1,4 @@
-const defaultFilter = { size: [], type: null, model: null }
+const defaultFilter = { size: [], type: null, model: null, sort: null }
 
 const reducer = (state = defaultFilter, action) => {
   switch (action.type) {

@@ -1,14 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { NavContainer, Brand, NavLinks, StyledLink } from './Nav.style'
+import { NavContainer, Brand, NavLinks, StyledLink } from './index.style'
 
 const Nav = () => {
   return (
     <NavContainer>
       <Brand>
-        <NavLink to="/">
+        <StyledLink to="/">
           "VANS"
-        </NavLink>
+        </StyledLink>
       </Brand>
       <NavLinks>
         <li>

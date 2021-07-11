@@ -28,7 +28,7 @@ const useFilterResource = () => {
     dispatch(filterClear())
     window.localStorage.setItem(
       'filters', 
-      JSON.stringify({ size: [], type: null, model: null })
+      JSON.stringify({ size: [], type: null, model: null, sort: null })
     )
   }
 

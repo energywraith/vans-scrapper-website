@@ -1,6 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-// Fonts
-import Rubik from './fonts/Rubik-Light.ttf'
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -21,12 +19,5 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-
-  @font-face {
-    font-family: 'Rubik';
-    src: url(${Rubik}) format('truetype');
-    font-weight: normal;
-    font-style: normal;
   }
 `

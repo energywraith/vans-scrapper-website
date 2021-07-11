@@ -1,6 +1,6 @@
 import React from 'react'
-import { LoaderContainer } from './Loader.style'
-import spinnerSVG from '../images/spinner.svg'
+import { LoaderContainer } from './index.style'
+import spinnerSVG from '../../images/spinner.svg'
 
 const Loader = () => {
   return (

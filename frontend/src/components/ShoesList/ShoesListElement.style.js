@@ -68,8 +68,8 @@ export const ToggleFavoriteButton = styled.button`
 
 export const SizeList = styled.ul`
   display: flex;
-  column-gap: 0.5em;
   flex-wrap: wrap;
+  column-gap: 0.5em;
   
   & li {
     padding: 0.3em;

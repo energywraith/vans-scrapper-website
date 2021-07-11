@@ -1,12 +1,14 @@
 import { Switch, Route } from 'react-router-dom'
 import { GlobalStyles } from './GlobalStyles.style'
 import { AppContainer } from './App.style'
+import './App.css'
 
 import Nav from './components/Nav'
-import Favorites from './components/Favorites'
 import About from './components/About'
-import ShoesList from './components/ShoesList'
+import Favourites from './components/Favourites'
 import Filters from './components/Filters'
+
+import ShoesList from './components/ShoesList'
 
 const App = () => {
   return (
@@ -19,7 +21,7 @@ const App = () => {
           <About />
         </Route>
         <Route path="/favorites">
-          <Favorites />
+          <Favourites />
         </Route>
         <Route path="/">
           <Filters />

@@ -1,8 +1,8 @@
 import Select from 'react-select'
 import { customStyles } from './SelectFilter.style'
-import useFilterResource from '../hooks/useFilterResource'
+import useFilterResource from '../../hooks/useFilterResource'
 
-const SelectFilter = ({ placeholderText, filterKey, options, isMulti }) => {
+const SelectFilter = ({ placeholderText, filterKey, options, isMulti, isSearchable }) => {
   const filterService = useFilterResource()
 
   const handleFilterChange = (event) => {
@@ -24,6 +24,7 @@ const SelectFilter = ({ placeholderText, filterKey, options, isMulti }) => {
     onChange={handleFilterChange}
     options={options}
     isMulti={isMulti}
+    isSearchable={isSearchable}
   />
 }
 

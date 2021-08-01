@@ -8,7 +8,7 @@ import useSortResource from '../../hooks/useSortResource'
 
 import Loader from '../Loader'
 import ShoesListElement from './ShoesListElement';
-import { ListContainer, CountInfo } from './index.style';
+import { Container, ListContainer, CountInfo } from './index.style';
 import SortFilter from './SortFilter';
 
 const ShoesList = () => {
@@ -21,7 +21,7 @@ const ShoesList = () => {
   const infiniteLoading = useInfiniteLoading(vansShoesFiltered, filter)
 
   return (
-    <ListContainer>
+    <Container>
       <CountInfo> {vansShoesFiltered.length} models match the following filters </CountInfo>
       <SortFilter />
       <InfiniteScroll
@@ -30,17 +30,17 @@ const ShoesList = () => {
         hasMore={infiniteLoading.hasMore}
         loader={<Loader />}
       >
-        <ul>
+        <ListContainer>
           {infiniteLoading.current && infiniteLoading.current.map(model => 
             <ShoesListElement 
               key={model.id}
               model={model}
-              isFavorite={favoriteModels.includes(model.id) ? true : false}
+              isFavourite={favoriteModels.includes(model.id) ? true : false}
             />
           )}
-        </ul>
+        </ListContainer>
       </InfiniteScroll>
-    </ListContainer>
+    </Container>
   )
 }
 

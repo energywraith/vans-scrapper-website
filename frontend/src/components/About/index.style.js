@@ -1,19 +1,35 @@
 import styled from 'styled-components'
 
 export const AboutContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
+  font-size: 1.1em;
   row-gap: 1em;
-  padding-top: 3em;
 
-  & > h4 {
-    margin: 0;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    row-gap: 1em;
+
+    & > p {
+      margin: 0;
+      text-align: center;
+      max-width: 65ch;
+  
+      & > a {
+        color: #0275d8;
+
+        &:hover {
+          filter: brightness(0.5);
+        }
+      }
+    }
   }
 
-  @media(max-width: 600px) {
-    padding: 3em 1em;
+  & > img {
+    height: 25vh;
+    object-fit: cover;
+    filter: brightness(0.5);
+    width: 100%;
   }
 ` 

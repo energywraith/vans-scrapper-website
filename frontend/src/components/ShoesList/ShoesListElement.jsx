@@ -1,58 +1,58 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useSelector } from 'react-redux';
 import useFavoriteModelsResource from '../../hooks/useFavoriteModelsResource';
 import useSortResource from '../../hooks/useSortResource'
 import { 
   ListElement,
-  PreviewImageContainer,
-  InfoGroup,
-  Header,
-  ToggleFavoriteButton,
+  Thumbnail,
+  ThumbnailImage,
+  Name,
   SizeList,
-  PriceTag,
-  UpdateDate
+  Price,
+  FavouritesButton
 } from './ShoesListElement.style'
 import favoriteSVG from '../../images/favorite.svg'
 
-const ShoesListElement = ({ model, isFavorite }) => {
+const ShoesListElement = ({ model, isFavourite, onRemoveVanish }) => {
   const { addModelToFavorite, removeModelFromFavorite } = useFavoriteModelsResource()
   const { isSizeFilterSet } = useSortResource()
   const filter = useSelector(state => state.filter)
+  const containerRef = useRef()
 
-  const handleFavoriteButton = (id) => {
-    isFavorite
-    ? removeModelFromFavorite(id)
-    : addModelToFavorite(id)
+  const handleRemoveVanish = (e, id) => {
+    containerRef.current.style.opacity = 0
+
+    setTimeout(() => {
+      removeModelFromFavorite(id)
+    }, 300)
+  }
+
+  const handleFavoriteButton = (e, id) => {
+    isFavourite
+      ? onRemoveVanish ? handleRemoveVanish(e, id) : removeModelFromFavorite(id)
+      : addModelToFavorite(id)
   }
 
   return (
-    <ListElement>
-      <PreviewImageContainer href={model.url}> 
-        <img src={model.img} alt="preview" />
-      </PreviewImageContainer>
-      <InfoGroup>
-        <Header> 
-          <ToggleFavoriteButton 
-            isFavorite={isFavorite} 
-            onClick={() => handleFavoriteButton(model.id)}
-          > 
-            <img src={favoriteSVG} alt="toggleFavorite" /> 
-          </ToggleFavoriteButton>
-          <a href={model.url}> {model.name} </a>
-        </Header>
-        <SizeList>
-          {model.sizes.length > 0 
-            ? model.sizes
+    <ListElement ref={containerRef}>
+      <Thumbnail href={model.url}>
+        <ThumbnailImage src={model.img} alt='Thumbnail' />
+      </Thumbnail>
+      <FavouritesButton onClick={(e) => handleFavoriteButton(e, model.id)} isFavourite={isFavourite}>
+        <img src={favoriteSVG} alt='add to favourites' />
+      </FavouritesButton>
+      <Name href={model.url}> {model.name} </Name>
+      <SizeList>
+        {model.sizes.length > 0
+          ? model.sizes
               .filter(size => isSizeFilterSet(filter) ? filter.size.includes(size) : true)
-              .map(size => 
-              <li key={size}> {size} </li>
-              )
-            : <span> Unavailable </span>
-          }
-        </SizeList>
-        <PriceTag> {model.price} zł </PriceTag>
-        <UpdateDate> {model.lastUpdated} </UpdateDate>
-      </InfoGroup>
+              .map(size => (
+                <li key={size}> {size} </li>
+              ))
+          : <li> Not available </li>
+        }
+      </SizeList>
+      <Price> Price: <b> {model.price} zł </b> </Price>
     </ListElement>
   )
 }

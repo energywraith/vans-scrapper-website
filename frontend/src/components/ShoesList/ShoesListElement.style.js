@@ -2,101 +2,88 @@ import styled from "styled-components"
 
 export const ListElement = styled.li`
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  box-shadow: 0px 0px 1px black;
-  padding: 1em;
-  margin-top: 1em;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15em repeat(4, auto);
+  box-shadow: 0px 0px 2px gray;
+  padding: 1em 0;
+  row-gap: 1em;
+
+  transition: opacity 300ms;
 `
 
-export const PreviewImageContainer = styled.a`
-  box-shadow: 0px 0px 1px black;
-  align-items: center;
-
-  & img {
-    height: 8em;
-    width: auto;
-    transform: scale(0.9);
-    transition: .2s ease-out;
-
-    &:hover {
-      transform: scale(1)
-    }
-  }
-
-  @media (max-width: 600px) {
-    display: flex;
-  }
+export const ThumbnailImage = styled.img`
+  transform: scale(0.9);
+  width: auto;
+  height: 15em;
 `
 
-export const InfoGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 1em;
-
-  @media (max-width: 600px) {
-    row-gap: 1em;
-  }
-`
-
-export const Header = styled.h4`
-  padding: 0em;
-  margin: 0;
+export const Thumbnail = styled.a`
+  padding: 2em;
+  flex-grow: 1;
   display: flex;
   align-items: center;
-  column-gap: 0.5em;
+  justify-content: center;
+
+  &:hover ${ThumbnailImage} {
+    transform: scale(1)
+  }
 `
 
-export const ToggleFavoriteButton = styled.button`
-  height: 2em;
-  border: 0;
-  box-shadow: 0px 0px 1px black;
-  cursor: pointer;
-  padding: 0.5em;
-
-  & img {
-    width: auto;
-    height: 100%;
-  }
+export const Name = styled.a`
+  justify-self: center;
+  font-size: 1.1em;
+  width: fit-content;
+  text-align: center;
 
   &:hover {
-    background: ${props => props.isFavorite ? "#eb4034" : "red"};
+    color: #b3b3b3;
   }
-
-  background: ${props => props.isFavorite ? "red" : "transparent"};
 `
 
 export const SizeList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  column-gap: 0.5em;
-  
-  & li {
-    padding: 0.3em;
+  justify-content: center;
+  row-gap: 0.5em;
+  column-gap: 1em;
+  font-weight: 600;
+  padding: 0 1em;
+`
+
+export const Price = styled.span`
+  text-align: center;
+`
+
+export const FavouritesButton = styled.button`
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2em 0;
+  width: fit-content;
+  justify-self: center;
+
+  & > img {
+    height: 1.5em;
+    width: auto;
+
+    ${props => props.isFavourite && 'filter: invert(0.5) sepia(1) saturate(113) hue-rotate(363deg);'}
+  }
+
+  &:hover > img {
+    filter: invert(0.5) sepia(1) saturate(113) hue-rotate(363deg);
+  }
+
+  @media(max-width: 600px) {
     box-shadow: 0px 0px 1px black;
-    user-select: none;
+    margin: 0em 1em;
+    padding: 0.5em;
+    width: 100%;
   }
 
-  & span {
-    color: red;
+  &:active > img {
+    filter: invert(0.5) sepia(1) saturate(113) hue-rotate(363deg) brightness(0.5);
   }
-
-  @media (max-width: 600px) {
-    column-gap: 0;
-
-    & li {
-      width: 2em;
-      text-align: center;
-    }
-  }
-`
-
-export const PriceTag = styled.span`
-  font-size: 1.1em;
-`
-
-export const UpdateDate = styled.span`
-  font-size: 0.9em;
-  color: #8e8e8e;
-  font-weight: 100;
 `

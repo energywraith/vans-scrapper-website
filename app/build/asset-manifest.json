@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.233c69f7.chunk.css",
-    "main.js": "/static/js/main.14fc5abe.chunk.js",
-    "main.js.map": "/static/js/main.14fc5abe.chunk.js.map",
+    "main.js": "/static/js/main.7d557e32.chunk.js",
+    "main.js.map": "/static/js/main.7d557e32.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cc85cbe0.js",
     "runtime-main.js.map": "/static/js/runtime-main.cc85cbe0.js.map",
     "static/js/2.f6109785.chunk.js": "/static/js/2.f6109785.chunk.js",
@@ -13,12 +13,13 @@
     "static/media/App.css": "/static/media/Rubik-Light.d950a011.ttf",
     "static/media/favorite.21d2cda7.svg": "/static/media/favorite.21d2cda7.svg",
     "static/media/filter-remove.5983630d.svg": "/static/media/filter-remove.5983630d.svg",
-    "static/media/spinner.7593a230.svg": "/static/media/spinner.7593a230.svg"
+    "static/media/spinner_w_bg.7593a230.svg": "/static/media/spinner_w_bg.7593a230.svg",
+    "static/media/vans.94f595c8.webp": "/static/media/vans.94f595c8.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.cc85cbe0.js",
     "static/js/2.f6109785.chunk.js",
     "static/css/main.233c69f7.chunk.css",
-    "static/js/main.14fc5abe.chunk.js"
+    "static/js/main.7d557e32.chunk.js"
   ]
 }

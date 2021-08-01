@@ -8,8 +8,8 @@ const SortFilter = () => {
         options={[
           { value: 'price-asc', label: 'price ascending' },
           { value: 'price-desc', label: 'price descending' },
-          { value: 'date-asc', label: 'date ascending' },
-          { value: 'date-desc', label: 'date descending' }
+          { value: 'date-asc', label: 'date ascending', isDisabled: true },
+          { value: 'date-desc', label: 'date descending', isDisabled: true }
         ]}
         placeholderText={"Select size"}
         filterKey={"sort"}

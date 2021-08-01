@@ -22,3 +22,6 @@ First load may take a while, because the page goes idle when there is no traffic
 ### Features:
 * You can add shoe to favorites to save it for later.
 * To keep data up to date I set node-cron that runs the [puppeteer scrap script](app/utils/vansScrapper.js) at 00:00 everyday.
+
+### Issues:
+* Sorting by date does not work :(.
